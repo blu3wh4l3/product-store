@@ -8,17 +8,29 @@ import {ProductService} from 'src/app/product.service';
 })
 export class ProductListingComponent implements OnInit {
 products:any = [];
+loading = true;
+confirm = false;
   constructor(private productService : ProductService) { }
 
   ngOnInit(): void {
     this.productService.getProducts()
     .subscribe(res => {
       this.products = res;
-      console.log(res);
+      // console.log(res);
+      this.loading = false;
     }, err => {
       console.log(err);
     })
   }
   
+
+  productDelete(id){
+    this.confirm = window.confirm("Are you sure u want to delete this product!!");
+    if(this.confirm){
+      // console.log(id);
+      this.productService.removeProduct(id);
+      this.products = this.products.filter(item => item.id != id);
+    }
+  }
 
 }
