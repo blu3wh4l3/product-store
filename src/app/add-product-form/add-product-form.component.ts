@@ -42,11 +42,6 @@ export class AddProductFormComponent implements OnInit {
     this.router.navigate(["/"]);
   }
     
-    // if(this.router.navigate(["/"]))  {
-    //   setTimeout( function(){
-    //     location.reload();
-    //   },1000);
-    // }
   }
 
 }
