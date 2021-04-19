@@ -13,7 +13,6 @@
                     <h5 class="card-title">{{product.title}}</h5>
                     <p class="card-text">{{product.description}}</p>
                     <h5 class="price">Price : ${{product.price}}</h5>
-                    <a href="#" class="btn btn-primary">Add to cart</a>
                     <a [routerLink]="['product',product.id]" class="btn btn-primary ml-2">View Details</a>
                     <button class="btn btn-danger ml-2" (click)="productDelete(product.id)">Delete</button>
                 </div>

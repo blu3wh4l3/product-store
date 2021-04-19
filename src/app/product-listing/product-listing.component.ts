@@ -27,7 +27,6 @@ confirm = false;
   productDelete(id){
     this.confirm = window.confirm("Are you sure u want to delete this product!!");
     if(this.confirm){
-      // console.log(id);
       this.productService.removeProduct(id);
       this.products = this.products.filter(item => item.id != id);
     }
